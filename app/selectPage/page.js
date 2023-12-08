@@ -1,29 +1,27 @@
 "use client";
 
 import Link from 'next/link';
-import React, { useState } from 'react';
+import React from 'react';
+import CitySearch from '../components/citySearch';
 
-const Page = () => {
-    const [selectedCity, setSelectedCity] = useState('');
 
-    const handleInputChange = (e) => {
-        setSelectedCity(e.target.value);
+// Create the component
+const SelectPage = () => {
+    // Function to navigate to favourites page
+    const handleFavourites = () => {
+        // Navigate to the favourites page
+        window.location.href = '/favouritesPage';
     };
 
     return (
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', textAlign: 'center'}}>
-            <text style={{ fontSize: '80px' }}>
-                <input type="text" value={selectedCity} onChange={handleInputChange} placeholder="SEARCH" style={{ textAlign: 'center', background: 'none' }} />
-                <br/>
-                or
-                <br/>
-                <Link href="/favouritesPage">
-                    SELECT FAVOURITE
-                </Link>
-            </text>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100vh' }}>
+            <CitySearch /> {/* Call CitySearch function */}
+            <div style={{ fontSize: '75px' }}>or</div>
+            <button style={{ fontSize: '75px' }} onClick={handleFavourites}>Select Favourite</button>
+
         </div>
-    );  
+    );
 };
 
-export default Page;
-
+// Export the component
+export default SelectPage;
