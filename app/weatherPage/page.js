@@ -5,6 +5,7 @@ import axios from 'axios';
 
 function Page() {
     const [searchedCity, setSearchedCity] = useState('');
+    const [weatherData, setWeatherData] = useState(null); // Add state for weather data
 
     useEffect(() => {
         const fetchData = async () => {
@@ -23,10 +24,11 @@ function Page() {
     }, []);
 
     return (
-        <div>
-                <p>The weather in {searchedCity} is currently </p>
-                
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh' }}>
+            <p style={{ fontSize: '175%' }}>The weather in {searchedCity} is currently experiencing {weatherData && weatherData.weather[0].description} and is { weatherData && weatherData.main.temp } kelvin</p> {/* Display weather data */}
         </div>
+        
+        
     );
 }
 
