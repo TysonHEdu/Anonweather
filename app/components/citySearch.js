@@ -1,9 +1,8 @@
-import Link from "next/link";
 import React from "react";
 import { useState } from "react";
 
 
-const CitySearch = () => {
+const CitySearch = (city) => {
     const [searchedCity, setSearchedCity] = useState("");
 
     const handleInputChange = (e) => {
@@ -12,9 +11,9 @@ const CitySearch = () => {
 
     const handleSearch = () => {
         // Navigate to weather page
-        alert(searchedCity);
-        window.location.href = `/weatherPage/`;
+        window.location.href = `/weatherPage/?city=${searchedCity}`;
     };
+    
 
     return (
         <div>
@@ -30,3 +29,7 @@ const CitySearch = () => {
 };
 
 export default CitySearch;
+
+export function searchedCity() {
+    return searchedCity;
+}
