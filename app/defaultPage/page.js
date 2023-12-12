@@ -17,7 +17,7 @@ const defaultPage = () => {
             <br/>
             <ul>
                 {defaultCities.map((city, index) => (
-                    <li key={index}>
+                    <li>
                         <button onClick={() => redirectToWeatherPage(city)}>{city}</button>
                     </li>
                 ))}
