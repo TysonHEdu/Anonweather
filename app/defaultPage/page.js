@@ -7,7 +7,6 @@ const defaultCities = ['New York', 'London', 'Tokyo', 'Calgary', 'Edmonton', 'Se
 const defaultPage = () => {
     const redirectToWeatherPage = (searchedCity) => {
         // Redirect to weatherPage with the searchedCity
-        // implementation goes here
         window.location.href = `weatherPage?city=${searchedCity}`;
     };
 
@@ -17,7 +16,7 @@ const defaultPage = () => {
             <br/>
             <ul>
                 {defaultCities.map((city, index) => (
-                    <li key={index}>
+                    <li key={index.main}>
                         <button onClick={() => redirectToWeatherPage(city)}>{city}</button>
                     </li>
                 ))}
