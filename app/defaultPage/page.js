@@ -16,9 +16,9 @@ const defaultPage = () => {
             <h1 style={{ fontSize: '250%' }}>Popular Cities</h1>
             <br/>
             <ul>
-                {defaultCities.map((city) => (
-                    <li>
-                    <button onClick={() => redirectToWeatherPage(city)}>{city}</button>
+                {defaultCities.map((city, index) => (
+                    <li key={index}>
+                        <button onClick={() => redirectToWeatherPage(city)}>{city}</button>
                     </li>
                 ))}
             </ul>
